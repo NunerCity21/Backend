@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+app.use = express.static('public');
 
 app.get('/students?/:id', (req, res) => {
-    res.send(`arrived ${req.params.id}/n`);
+    res.send(`arrived ${process.env.STATUS} ${req.params.id}/n`);
 });
 
 app.get('/ab*cd', (req, res) => {
